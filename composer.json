@@ -1,0 +1,56 @@
+{
+    "name": "root/ipgeobase",
+    "description": "ipgeobase example",
+    "type": "project",
+    "authors": [
+        {
+            "name": "vladimir",
+            "email": "kv.artistlabs@gmail.com"
+        }
+    ],
+    "require": {
+        "php":  "^7.1.2",
+        "slim/slim": "3.9.*",
+        "ipgeobase/data": "1.*",
+        "ipgeomaxmind/data": "1.*",
+        "webmozart/assert": "1.3.*",
+        "symfony/cache": "3.4.*",
+        "geoip2/geoip2": "2.8.*"
+    },
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "ipgeobase/data",
+                "version": "1.0",
+                "dist": {
+                    "url": "http://ipgeobase.ru/files/db/Main/geo_files.zip",
+                    "type": "zip"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "ipgeomaxmind/data",
+                "version": "1.0",
+                "dist": {
+                    "url": "http://geolite.maxmind.com/download/geoip/database/GeoLite2-City.mmdb.gz",
+                    "type": "gzip"
+                }
+            }
+        }
+    ],
+    "config": {
+        "preferred-install": {
+            "*": "dist"
+        },
+        "secure-http": false,
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "": "src/project/"
+        }
+    }
+}
